@@ -46,3 +46,7 @@ Altitude data
 
 ### PROJECT STRUCTURE  
 drone.ino /main flight controller code  
+
+### Performance
+Flight Controller one loop time = 1 ms (generally)
+ML part = ?
