@@ -21,7 +21,7 @@ piezodisk
 proto board pcb  
 5A voltage regulator  
 12AWG slicon wire  
-#####Future  parts
+##### Future  parts
 Jetson Nano  
 Sım808  
 
