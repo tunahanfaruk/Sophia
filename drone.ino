@@ -4,9 +4,12 @@
 #include "SparkFun_BNO08x_Arduino_Library.h"
 BNO08x myIMU;
 
+unsigned long startTime;
+
+
 float previousMillis = 0;
 
-float speed = 1040;
+float speed = 1050;
 
 float roll = 0;
 float pitch = 0;
@@ -20,12 +23,12 @@ float x_fin_angle = 0;
 float x_integral = 0.0;
 float x_previousError = 0.0;
     
-float kp = 1.0;
+float kp = 0.0;
 float ki = 0.0;
 float kd = 0.0 ;
 
 
-float dt = 0.1;
+float dt = 0.001;
 
 
 
@@ -72,6 +75,7 @@ void leftb_speed(int us) {
 #define BNO08X_ADDR 0x4B
 
 void setup() {
+  Serial.print("start");
   delay(10000);
   //starting serial monitor
   Serial.begin(115200);
@@ -119,6 +123,8 @@ void setup() {
   leftb_speed(1000);
 
   delay(2000);
+  
+  startTime = millis();
 }
 
 //function for getting datas
@@ -129,10 +135,24 @@ void setReports(void) {
     Serial.println(F("Output in form roll, pitch, yaw"));
   } else {
     Serial.println("Could not enable rotation vector");
-  }
+  }1400;
+
+float roll = 0;
 }
 
 void loop() {
+
+
+//test mode
+
+   /* 
+  if (millis() - startTime > 10000) {
+    Serial.println("finished");
+    while (true) {
+      // dur, hiçbir şey yapma
+    }}
+    */
+
 
 
   float currentMillis = millis();
@@ -140,6 +160,7 @@ void loop() {
   previousMillis = currentMillis;
   dt = dt * 0.001;
 
+ 
 
   
   if (myIMU.wasReset()) {
@@ -212,8 +233,8 @@ void loop() {
   //Serial.print((int)(speed + (+ x_output - y_output)/2));
   //Serial.println((int)(speed + (- x_output - y_output)/2));//
 
-  Serial.println(dt , 3);
-  Serial.println();
+  //Serial.println(dt , 3);
+  //Serial.println();
   
   
 }
