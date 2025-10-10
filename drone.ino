@@ -11,6 +11,10 @@ float previousMillis = 0;
 
 float speed = 1050;
 
+float smth = 1;
+
+float goal_speed = 1050;
+
 float roll = 0;
 float pitch = 0;
 float yaw = 0;
@@ -141,22 +145,35 @@ float roll = 0;
 }
 
 void loop() {
+  delay(1000);
 
+  //for smooth speed change
+  if (goal_speed > speed){
 
-//test mode
+    speed += smth;
 
-   /* 
-  if (millis() - startTime > 10000) {
+  }
+
+  if (goal_speed < speed){
+
+    speed -= smth;
+
+  }
+
+  /*if (millis() - startTime > 10000) { 
     Serial.println("finished");
     while (true) {
-      // dur, hiçbir şey yapma
+      right_speed(1000);
+    left_speed(1000);
+    rightb_speed(1000);
+    leftb_speed(1000);
     }}
-    */
+*/
 
 
 
   float currentMillis = millis();
-  dt = (currentMillis - previousMillis); // saniye cinsinden
+  dt = (currentMillis - previousMillis); 
   previousMillis = currentMillis;
   dt = dt * 0.001;
 
@@ -228,10 +245,10 @@ void loop() {
 
 
 
-  //Serial.print((int)(speed + (+ x_output + y_output)/2));
-  //Serial.println((int)(speed + (- x_output + y_output)/2));//
-  //Serial.print((int)(speed + (+ x_output - y_output)/2));
-  //Serial.println((int)(speed + (- x_output - y_output)/2));//
+  Serial.print((int)(speed + (+ x_output + y_output)/2));
+  Serial.println((int)(speed + (- x_output + y_output)/2));//
+  Serial.print((int)(speed + (+ x_output - y_output)/2));
+  Serial.println((int)(speed + (- x_output - y_output)/2));//
 
   //Serial.println(dt , 3);
   //Serial.println();
