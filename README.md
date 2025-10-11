@@ -30,7 +30,7 @@ you can find photos of them at /photos/list_of_parts
 
 ### SOFTWARE  
 Flight controller = C++ (Arduino IDE)  
-ML = Pytorch (JupyterNotebook)  
+ML = Pytorch (JupyterNotebook + Google Collab)  
 
 
 ### Features  
