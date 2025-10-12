@@ -3,7 +3,6 @@ Machine Learning supported drone project
 
 ### OWERVİEW
 Goal of this project is powering a drone whit MACHINE LEARNING MODELS. Because for a drone that is powered by ML there noting that it can do  
-###### you can find photos of drone at /photos/drone
 now the project is at the part of programmeing the flight controller
 
 ### LIST OF PARTS:  
@@ -25,7 +24,6 @@ proto board pcb
 Jetson Nano  
 Sım808  
 
-you can find photos of them at /photos/list_of_parts  
 
 
 ### SOFTWARE  
@@ -43,10 +41,8 @@ Air pressure data
 Altitude data  
 4 kg trust  
 
+Fire dedection on forest  
 
-### PROJECT STRUCTURE  
-drone.ino /main flight controller code  
 
 ### Performance
 Flight Controller one loop time = 1 ms (generally)
-ML part = ?
