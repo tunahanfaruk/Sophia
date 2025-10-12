@@ -6,9 +6,13 @@ dedecting that is there fire or not at forest
 ### Dataset :   
 [DATASET_LINK](https://www.kaggle.com/datasets/elmadafri/the-wildfire-dataset)  
 
+### Model 
+[MODEL_LINK](https://huggingface.co/Tunahan445/sophia_forest_fire_dedection/tree/main)  
+
 ### Model structure  
 Whit pytorch  
-
+  
+```
 ----------------------------------------------------------------  
         Layer (type)               Output Shape         Param #  
 ================================================================  
@@ -48,6 +52,7 @@ Forward/backward pass size (MB): 153.22
 Params size (MB): 406.96  
 Estimated Total Size (MB): 560.75  
 ----------------------------------------------------------------  
+```
 
 ### Train  
 On Google Collab for 50 ephoch whit T4 GPU  
