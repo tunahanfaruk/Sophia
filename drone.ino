@@ -1,257 +1,298 @@
-//importing librarys
 #include <Wire.h>
 #include <ESP32Servo.h>
 #include "SparkFun_BNO08x_Arduino_Library.h"
+#include "Adafruit_BMP3XX.h"
+
+// ======== BMP390 ========
+#define SEALEVELPRESSURE_HPA (1013.25)
+#define BMP_I2C_SDA 19
+#define BMP_I2C_SCL 18
+Adafruit_BMP3XX bmp;
+double calib = 0.0;
+float loo = 0;
+float seno = 0;
+float sen = 0;
+
+
+
+
+
+
+
+
+// ======== BNO08x ========
+TwoWire WireBNO(1); // ESP32 ikinci I2C hattı
 BNO08x myIMU;
-
-unsigned long startTime;
-
-
-float previousMillis = 0;
-
-float speed = 1050;
-
-float smth = 1;
-
-float goal_speed = 1050;
-
-float roll = 0;
-float pitch = 0;
-float yaw = 0;
-
-float y_fin_angle = 0;
-float y_integral = 0.0;
-float y_previousError = 0.0;
-
-float x_fin_angle = 0;
-float x_integral = 0.0;
-float x_previousError = 0.0;
-    
-float kp = 0.0;
-float ki = 0.0;
-float kd = 0.0 ;
-
-
-float dt = 0.001;
-
-
-
-// motor objects
-Servo right;
-Servo left;
-Servo rightb;
-Servo leftb;
-
-//seting pins
-const int pinright = 5;
-const int pinleft = 2;
-const int pinrightb = 13;
-const int pinleftb = 14;
-
-#define BNO08X_INT  -1
-#define BNO08X_RST  -1
-
-
-//functions for useing brusless motors
-void right_speed(int us) {
-  right.writeMicroseconds(us);
-}
-
-void left_speed(int us) {
-  left.writeMicroseconds(us);
-}
-
-void rightb_speed(int us) {
-  rightb.writeMicroseconds(us);
-}
-
-void leftb_speed(int us) {
-  leftb.writeMicroseconds(us);
-}
-
-
-
-
-
-
-//seting bno08x adress
-
 #define BNO08X_ADDR 0x4B
+#define BNO08X_INT -1
+#define BNO08X_RST -1
 
+
+
+
+
+
+
+
+float roll=0, pitch=0, yaw=0;
+float x_fin_angle=0, y_fin_angle=0;
+float x_integral=0, y_integral=0;
+float x_previousError=0, y_previousError=0;
+float kp=0.0, ki=0.0, kd=0.0;
+float dt=0.001;
+float previousMillis=0;
+
+
+
+
+
+
+
+
+// ======== Motors ========
+Servo right, left, rightb, leftb;
+const int pinright=5, pinleft=2, pinrightb=13, pinleftb=14;
+float speed=1050, goal_speed=1050, smth=1;
+
+
+
+
+
+
+
+
+
+// ======== Functions ========
+void right_speed(int us){ right.writeMicroseconds(us); }
+void left_speed(int us){ left.writeMicroseconds(us); }
+void rightb_speed(int us){ rightb.writeMicroseconds(us); }
+void leftb_speed(int us){ leftb.writeMicroseconds(us); }
+
+
+
+
+
+
+
+
+void setReports(){
+  if(myIMU.enableRotationVector()) Serial.println(F("Rotation vector enabled"));
+  else Serial.println("Could not enable rotation vector");
+
+  if(myIMU.enableAccelerometer()) Serial.println(F("Accelerometer enabled"));
+  else Serial.println("Could not enable accelerometer");
+}
+
+
+
+
+
+
+
+
+// ======== Setup ========
 void setup() {
-  Serial.print("start");
-  delay(10000);
-  //starting serial monitor
   Serial.begin(115200);
-  
   while(!Serial) delay(10);
-  
-  Serial.println();
-  Serial.println("BNO08x Read Example");
 
-  //seting ı2c pins
-  Wire.begin(21 , 22);
 
-  //founing bno08x  
-  if (myIMU.begin(BNO08X_ADDR, Wire, BNO08X_INT, BNO08X_RST) == false) {
-    Serial.println("BNO08x not detected at default I2C address. Check your jumpers and the hookup guide. Freezing...");
-    while (1)
-      ;
+
+
+
+
+
+
+
+  // --- BMP ---
+  Wire.begin(BMP_I2C_SDA, BMP_I2C_SCL);
+  if(!bmp.begin_I2C()){ Serial.println("BMP not found!"); while(1); }
+  bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_8X);
+  bmp.setPressureOversampling(BMP3_OVERSAMPLING_4X);
+  bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
+  bmp.setOutputDataRate(BMP3_ODR_50_HZ);
+
+
+
+
+
+
+
+
+
+  // BMP Calibration
+  double sum=0;
+  for(int i=0;i<20;i++){
+    if(bmp.performReading()) sum += bmp.readAltitude(SEALEVELPRESSURE_HPA);
+    delay(50);
   }
-  Serial.println("BNO08x found!");
 
-  
 
+
+
+
+
+
+
+
+  calib = sum / 20.0;
+  Serial.print("BMP Calibration done: "); Serial.println(calib);
+
+
+
+
+
+
+
+
+
+  // --- BNO ---
+  WireBNO.begin(21,22); // BNO08x için ayrı I2C hattı
+  if(!myIMU.begin(BNO08X_ADDR, WireBNO, BNO08X_INT, BNO08X_RST)){
+    Serial.println("BNO08x not found!"); while(1);
+  }
   setReports();
 
-  Serial.println("Reading events");
 
 
 
 
 
-  //seting pwn
-  right.setPeriodHertz(50);
-  right.attach(pinright, 1000, 2000);
-  left.setPeriodHertz(50);
-  left.attach(pinleft, 1000, 2000);
-  rightb.setPeriodHertz(50);
-  rightb.attach(pinrightb, 1000, 2000);
-  leftb.setPeriodHertz(50);
-  leftb.attach(pinleftb, 1000, 2000);
 
-  //calibrateing esc
-  right_speed(1000);
-  left_speed(1000);
-  rightb_speed(1000);
-  leftb_speed(1000);
 
+
+
+  // --- Motors ---
+  right.setPeriodHertz(50); right.attach(pinright,1000,2000);
+  left.setPeriodHertz(50); left.attach(pinleft,1000,2000);
+  rightb.setPeriodHertz(50); rightb.attach(pinrightb,1000,2000);
+  leftb.setPeriodHertz(50); leftb.attach(pinleftb,1000,2000);
+
+
+
+
+
+
+
+
+
+  // ESC calibration
+  right_speed(1000); left_speed(1000); rightb_speed(1000); leftb_speed(1000);
   delay(2000);
-  
-  startTime = millis();
 }
 
-//function for getting datas
-void setReports(void) {
-  Serial.println("Setting desired reports");
-  if (myIMU.enableRotationVector() == true) {
-    Serial.println(F("Rotation vector enabled"));
-    Serial.println(F("Output in form roll, pitch, yaw"));
-  } else {
-    Serial.println("Could not enable rotation vector");
-  }1400;
-
-float roll = 0;
-}
-
+// ======== Loop ========
 void loop() {
-  delay(1000);
-
-  //for smooth speed change
-  if (goal_speed > speed){
-
-    speed += smth;
-
-  }
-
-  if (goal_speed < speed){
-
-    speed -= smth;
-
-  }
-
-  /*if (millis() - startTime > 10000) { 
-    Serial.println("finished");
-    while (true) {
-      right_speed(1000);
-    left_speed(1000);
-    rightb_speed(1000);
-    leftb_speed(1000);
-    }}
-*/
 
 
-
+  // --- Timing ---
   float currentMillis = millis();
-  dt = (currentMillis - previousMillis); 
+  dt = (currentMillis - previousMillis) * 0.001;
   previousMillis = currentMillis;
-  dt = dt * 0.001;
 
- 
 
-  
-  if (myIMU.wasReset()) {
-    Serial.print("sensor was reset ");
-    setReports();
+
+
+
+
+
+
+
+  // --- BMP Altitude ---
+  float altitude=0, temperature=0, pressure=0;
+  if(bmp.performReading()){
+    altitude = bmp.readAltitude(SEALEVELPRESSURE_HPA) - calib;
+    temperature = bmp.readTemperature();
+    pressure = bmp.readPressure();
+    seno += altitude; loo++;
+    if((int)loo%5==0){ sen = seno/5.0; seno=0; }
   }
 
-  //resding sensor
-  if (myIMU.getSensorEvent() == true) {
 
-    
-    if (myIMU.getSensorEventID() == SENSOR_REPORTID_ROTATION_VECTOR) {
 
-    roll = (myIMU.getRoll()) * 180.0 / PI; // Convert roll to degrees
-    pitch = (myIMU.getPitch()) * 180.0 / PI; // Convert pitch to degrees
-    yaw = (myIMU.getYaw()) * 180.0 / PI; // Convert yaw / heading to degrees
 
-    //Serial.print(roll, 1);
-    //Serial.print(F(","));
-    //Serial.print(pitch, 1);
-    //Serial.print(F(","));
-    //Serial.print(yaw, 1);
 
-    //Serial.println();
 
-    
+
+
+
+  // --- BNO Orientation & Accel ---
+  float ax=0, ay=0, az=0;
+  if(myIMU.wasReset()) setReports();
+  if(myIMU.getSensorEvent()){
+    if(myIMU.getSensorEventID()==SENSOR_REPORTID_ROTATION_VECTOR){
+      roll = myIMU.getRoll()*180.0/PI;
+      pitch = myIMU.getPitch()*180.0/PI;
+      yaw = myIMU.getYaw()*180.0/PI;
+    } else if(myIMU.getSensorEventID()==SENSOR_REPORTID_ACCELEROMETER){
+      ax = myIMU.getAccelX();
+      ay = myIMU.getAccelY();
+      az = myIMU.getAccelZ();
     }
   }
 
 
 
-  
 
 
 
 
 
+
+  // --- PID Control ---
   float x_error = x_fin_angle - roll;
   x_integral += x_error * dt;
-  float x_derivative = (x_error - x_previousError) / dt;
-  float x_output = kp * x_error + ki * x_integral + kd * x_derivative;
+  float x_derivative = (x_error - x_previousError)/dt;
+  float x_output = kp*x_error + ki*x_integral + kd*x_derivative;
   x_previousError = x_error;
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
   float y_error = y_fin_angle - pitch;
-  y_integral += y_error * dt;
-  float y_derivative = (y_error - y_previousError) / dt;
-  float y_output = kp * y_error + ki * y_integral + kd * y_derivative;
+  y_integral += y_error*dt;
+  float y_derivative = (y_error - y_previousError)/dt;
+  float y_output = kp*y_error + ki*y_integral + kd*y_derivative;
   y_previousError = y_error;
+
+
+
+
+
+  // --- Motor Output ---
+  if(goal_speed > speed) speed += smth;
+  if(goal_speed < speed) speed -= smth;
+
+  int rightPWM = (int)(speed+(+x_output+y_output)/2);
+  int leftPWM  = (int)(speed+(-x_output+y_output)/2);
+  int rightbPWM= (int)(speed+(+x_output-y_output)/2);
+  int leftbPWM = (int)(speed+(-x_output-y_output)/2);
+
+  right_speed(rightPWM);
+  left_speed(leftPWM);
+  rightb_speed(rightbPWM);
+  leftb_speed(leftbPWM);
+
+
+
+
+
+
+
+
+
   
+  Serial.print("Alt: "); Serial.print(altitude); Serial.print(" m | Avg: "); Serial.print(sen);
+  Serial.print(" | Temp: "); Serial.print(temperature); Serial.print(" C | P: "); Serial.print(pressure); Serial.println(" Pa");
 
-  right_speed((int)(speed + (+ x_output + y_output)/2));
-  left_speed((int)(speed + (- x_output + y_output)/2));
-  rightb_speed((int)(speed + (+ x_output - y_output)/2));
-  leftb_speed((int)(speed + (- x_output - y_output)/2));
+  Serial.print("Euler: Roll: "); Serial.print(roll); Serial.print(" Pitch: "); Serial.print(pitch); Serial.print(" Yaw: "); Serial.println(yaw);
+  Serial.print("Accel: X: "); Serial.print(ax); Serial.print(" Y: "); Serial.print(ay); Serial.print(" Z: "); Serial.println(az);
 
+  Serial.print("Motors PWM -> R: "); Serial.print(rightPWM);
+  Serial.print(" L: "); Serial.print(leftPWM);
+  Serial.print(" Rb: "); Serial.print(rightbPWM);
+  Serial.print(" Lb: "); Serial.println(leftbPWM);
+  Serial.println(dt);
 
-
-
-
-  Serial.print((int)(speed + (+ x_output + y_output)/2));
-  Serial.println((int)(speed + (- x_output + y_output)/2));//
-  Serial.print((int)(speed + (+ x_output - y_output)/2));
-  Serial.println((int)(speed + (- x_output - y_output)/2));//
-
-  //Serial.println(dt , 3);
-  //Serial.println();
-  
-  
+  Serial.println("--------------------------------------------------");
 }
