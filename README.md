@@ -45,4 +45,4 @@ Fire dedection on forest
 
 
 ### Performance
-Flight Controller one loop time = 1 ms (generally)
+Flight Controller one loop time = 5 ms (generally)
