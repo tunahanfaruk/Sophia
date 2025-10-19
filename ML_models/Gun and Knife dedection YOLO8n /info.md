@@ -1,4 +1,4 @@
-# Gun and Knife dedection YYOLO8N model  
+# Gun and Knife dedection YOLO8N model  
   
 ### use of this model :  
 dedecting that is there gun or knife  
