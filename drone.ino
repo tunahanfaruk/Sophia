@@ -92,6 +92,8 @@ void setReports(){
 
 // ======== Setup ========
 void setup() {
+
+  delay(10000);
   Serial.begin(115200);
   while(!Serial) delay(10);
 
@@ -146,7 +148,7 @@ void setup() {
 
 
   // --- BNO ---
-  WireBNO.begin(21,22); // BNO08x için ayrı I2C hattı
+  WireBNO.begin(21,22); 
   if(!myIMU.begin(BNO08X_ADDR, WireBNO, BNO08X_INT, BNO08X_RST)){
     Serial.println("BNO08x not found!"); while(1);
   }
@@ -172,10 +174,11 @@ void setup() {
 
 
 
-
-
-
   // ESC calibration
+  // also it depends on ESC
+  right_speed(2000); left_speed(2000); rightb_speed(2000); leftb_speed(2000);
+  delay(2000);
+  
   right_speed(1000); left_speed(1000); rightb_speed(1000); leftb_speed(1000);
   delay(2000);
 }
@@ -259,10 +262,11 @@ void loop() {
 
 
 
-  // --- Motor Output ---
+  // --- smooth ---
   if(goal_speed > speed) speed += smth;
   if(goal_speed < speed) speed -= smth;
 
+  // --- Motor Output ---
   int rightPWM = (int)(speed+(+x_output+y_output)/2);
   int leftPWM  = (int)(speed+(-x_output+y_output)/2);
   int rightbPWM= (int)(speed+(+x_output-y_output)/2);
