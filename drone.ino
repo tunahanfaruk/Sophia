@@ -54,7 +54,7 @@ float speed=1050, goal_speed=1050, smth=1;
 
 
 
-
+float currentMillis_cal = millis();
 
 
 
@@ -184,8 +184,11 @@ void setup() {
   
   right_speed(1000); left_speed(1000); rightb_speed(1000); leftb_speed(1000);
   delay(2000);
+
+  currentMillis_cal = millis();
 }
 
+double time_started = 0.0;
 
 float v1 = 0.0;
 float v2 = 0.0;
@@ -196,16 +199,47 @@ float rl_alt = 0.0;
 
 // ======== Loop ========
 void loop() {
-
+  
 
   // --- Timing ---
-  float currentMillis = millis();
+  float currentMillis = millis() - currentMillis_cal;
+
+  time_started = currentMillis * 0.001;
+
   dt = (currentMillis - previousMillis) * 0.001;
   previousMillis = currentMillis;
 
 
 
+//harsh stopping
+/*
+  if (time_started > 15.0){
 
+    while (true) {
+      right_speed(1000);
+      left_speed(1000);
+      rightb_speed(1000);
+      leftb_speed(1000);
+    }
+
+
+    
+
+
+  }
+*/
+
+
+//smooth stopping
+
+/*
+
+  if (time_started > 15.0){
+
+    goal_speed = 1000;
+
+  }
+*/
 
 
 
@@ -313,8 +347,8 @@ void loop() {
 
 
   
-  Serial.println("Alt: "); Serial.print(altitude); Serial.print(" m | Avg: "); Serial.print(rl_alt);
-  /*Serial.print(" | Temp: "); Serial.print(temperature); Serial.print(" C | P: "); Serial.print(pressure); Serial.println(" Pa");
+  /*Serial.println("Alt: "); Serial.print(altitude); Serial.print(" m | Avg: "); Serial.print(rl_alt);
+  Serial.print(" | Temp: "); Serial.print(temperature); Serial.print(" C | P: "); Serial.print(pressure); Serial.println(" Pa");
 
   Serial.print("Euler: Roll: "); Serial.print(roll); Serial.print(" Pitch: "); Serial.print(pitch); Serial.print(" Yaw: "); Serial.println(yaw);
   Serial.print("Accel: X: "); Serial.print(ax); Serial.print(" Y: "); Serial.print(ay); Serial.print(" Z: "); Serial.println(az);
@@ -324,6 +358,9 @@ void loop() {
   Serial.print(" Rb: "); Serial.print(rightbPWM);
   Serial.print(" Lb: "); Serial.println(leftbPWM);
   Serial.println(dt);*/
+
+
+  Serial.println(time_started);
 
   //Serial.println("--------------------------------------------------");
 }
