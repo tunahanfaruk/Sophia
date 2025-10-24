@@ -10,9 +10,6 @@
 Adafruit_BMP3XX bmp;
 double calib = 0.0;
 float loo = 0;
-float seno = 0;
-float sen = 0;
-
 
 
 
@@ -122,10 +119,16 @@ void setup() {
 
 
   // BMP Calibration
-  double sum=0;
-  for(int i=0;i<20;i++){
+
+  // waiting for sensor to get heat
+  for(int i=0; i<1000; i++){
+    bmp.performReading();
+    delay(20);
+  }
+
+  float sum=0;
+  for(int i=0;i<1000;i++){
     if(bmp.performReading()) sum += bmp.readAltitude(SEALEVELPRESSURE_HPA);
-    delay(50);
   }
 
 
@@ -136,7 +139,7 @@ void setup() {
 
 
 
-  calib = sum / 20.0;
+  calib = sum / 1000.0;
   Serial.print("BMP Calibration done: "); Serial.println(calib);
 
 
@@ -183,6 +186,14 @@ void setup() {
   delay(2000);
 }
 
+
+float v1 = 0.0;
+float v2 = 0.0;
+float v3 = 0.0;
+float v4 = 0.0;
+float v5 = 0.0;
+float rl_alt = 0.0;
+
 // ======== Loop ========
 void loop() {
 
@@ -201,13 +212,29 @@ void loop() {
 
 
   // --- BMP Altitude ---
-  float altitude=0, temperature=0, pressure=0;
+  float altitude=0.0, temperature=0.0, pressure=0.0;
+
+
+
   if(bmp.performReading()){
+
     altitude = bmp.readAltitude(SEALEVELPRESSURE_HPA) - calib;
     temperature = bmp.readTemperature();
     pressure = bmp.readPressure();
-    seno += altitude; loo++;
-    if((int)loo%5==0){ sen = seno/5.0; seno=0; }
+
+
+    v5 = v4;
+    v4 = v3;
+    v3 = v2;
+    v2 = v1;
+    v1 = altitude;
+
+    rl_alt = (v1 + v2 + v3 + v4 + v5) / 5; 
+
+
+
+    
+
   }
 
 
@@ -286,8 +313,8 @@ void loop() {
 
 
   
-  Serial.print("Alt: "); Serial.print(altitude); Serial.print(" m | Avg: "); Serial.print(sen);
-  Serial.print(" | Temp: "); Serial.print(temperature); Serial.print(" C | P: "); Serial.print(pressure); Serial.println(" Pa");
+  Serial.println("Alt: "); Serial.print(altitude); Serial.print(" m | Avg: "); Serial.print(rl_alt);
+  /*Serial.print(" | Temp: "); Serial.print(temperature); Serial.print(" C | P: "); Serial.print(pressure); Serial.println(" Pa");
 
   Serial.print("Euler: Roll: "); Serial.print(roll); Serial.print(" Pitch: "); Serial.print(pitch); Serial.print(" Yaw: "); Serial.println(yaw);
   Serial.print("Accel: X: "); Serial.print(ax); Serial.print(" Y: "); Serial.print(ay); Serial.print(" Z: "); Serial.println(az);
@@ -296,7 +323,7 @@ void loop() {
   Serial.print(" L: "); Serial.print(leftPWM);
   Serial.print(" Rb: "); Serial.print(rightbPWM);
   Serial.print(" Lb: "); Serial.println(leftbPWM);
-  Serial.println(dt);
+  Serial.println(dt);*/
 
-  Serial.println("--------------------------------------------------");
+  //Serial.println("--------------------------------------------------");
 }
