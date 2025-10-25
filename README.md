@@ -24,14 +24,14 @@ Machine Learning supported drone project
 [Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
 
 
-###Overview
+### Overview
 Sophia is an experimental drone powered by Machine Learning models. The goal is to create an autonomous drone capable of complex tasks such as object detection, fire detection, and situational awareness in real-time.
 
-###Features
-*🔥 Forest fire detection
-*🔫 Gun and knife detection
-*🚀 4 kg thrust
-*🕐 Flight controller loop time: ~5 ms
+### Features
+* 🔥 Forest fire detection
+* 🔫 Gun and knife detection
+* 🚀 4 kg thrust
+* 🕐 Flight controller loop time: ~5 ms
 
 ###Hardware Components
 | components |
@@ -51,17 +51,17 @@ Sophia is an experimental drone powered by Machine Learning models. The goal is 
 |5A voltage regulator|
 |12AWG silicone wire|
 
-###Future Hardware Upgrades:
-*Jetson Nano (onboard ML inference)
-*SIM808 (GPS + GSM)
-*Slamtec C1 (LiDAR sensor)
+### Future Hardware Upgrades:
+* Jetson Nano (onboard ML inference)
+* SIM808 (GPS + GSM)
+* Slamtec C1 (LiDAR sensor)
 
-###Software Stack
-*Flight Controller: C++ 
-*Machine Learning: PyTorch 
+### Software Stack
+* Flight Controller: C++ 
+* Machine Learning: PyTorch 
 
-###Performance Metrics
-*Single loop execution: ~5 ms
+### Performance Metrics
+* Single loop execution: ~5 ms
 
-###Contributing
+### Contributing
 PRs and issues are welcome! Let’s make Sophia smarter together.
