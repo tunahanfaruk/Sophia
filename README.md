@@ -24,43 +24,44 @@ Machine Learning supported drone project
 [Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
 
 
-### OWERVİEW
-Goal of this project is powering a drone whit MACHINE LEARNING MODELS. Because for a drone that is powered by ML there noting that it cant do  
+###Overview
+Sophia is an experimental drone powered by Machine Learning models. The goal is to create an autonomous drone capable of complex tasks such as object detection, fire detection, and situational awareness in real-time.
 
-### LIST OF PARTS:  
+###Features
+*🔥 Forest fire detection
+*🔫 Gun and knife detection
+*🚀 4 kg thrust
+*🕐 Flight controller loop time: ~5 ms
 
-BMP390  
-BNO 08X  
-A2212 13T 1000KV  
-10 inch propeller  
-EC5  
-30A ESC  
-ESP32 NODMCU (future plan Tensy 4.1)   
-F450  
-LDR  
-2800mah 3S 40C LİPO  (future plan 5600 mah)
-piezodisk  
-proto board pcb  (future plan real PCB) 
-5A voltage regulator  
-12AWG slicon wire  
-  
-##### Future  parts
-Jetson Nano  
-Sım808  
-Slamtec C1  
+###Hardware Components
+| components |
+|:----|
+|BMP390|
+|BNO08X|
+|A2212 13T 1000KV|
+|10 inch propeller|
+|EC5|
+|30A ESC|
+|ESP32 NODMCU|
+|F450 frame|
+|LDR|
+|2800 mAh 3S 40C LiPo|
+|Piezo disk|
+|Proto PCB|
+|5A voltage regulator|
+|12AWG silicone wire|
 
+###Future Hardware Upgrades:
+*Jetson Nano (onboard ML inference)
+*SIM808 (GPS + GSM)
+*Slamtec C1 (LiDAR sensor)
 
+###Software Stack
+*Flight Controller: C++ 
+*Machine Learning: PyTorch 
 
-### SOFTWARE  
-Flight controller = C++ (Arduino IDE)  
-ML = Pytorch (JupyterNotebook + Google Collab)  
+###Performance Metrics
+*Single loop execution: ~5 ms
 
-
-### Features  
-Fire dedection on forest  
-Gun and Knife dedection  
-  
-4 kg trust  
-
-### Performance
-Flight Controller one loop time = 5 ms (generally)
+###Contributing
+PRs and issues are welcome! Let’s make Sophia smarter together.
