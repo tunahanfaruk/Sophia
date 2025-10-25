@@ -23,7 +23,7 @@ const on = (el, ev, fn) => { if(!el) return; el.addEventListener(ev, fn); };
   const nextArrow = $('.arrow.next');
   const dotsContainer = $('.dots');
   let index = 0;
-  const INTERVAL = 1000; // 1s
+  const INTERVAL = 3750; // 1s
   let timer = null;
 
   // build dots
