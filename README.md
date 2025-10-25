@@ -16,7 +16,8 @@ Machine Learning supported drone project
 [![Downloads](https://img.shields.io/pypi/dm/sophia)](https://pypi.org/project/sophia/)
 [![Contributors](https://img.shields.io/github/contributors/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/graphs/contributors)
 
-![Snyk Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/tunahanfaruk/sophia)
+[![Known Vulnerabilities](https://snyk.io/test/github/tunahanfaruk/sophia/badge.svg)](https://snyk.io/test/github/tunahanfaruk/sophia)
+
 
 
 
