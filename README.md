@@ -6,7 +6,6 @@ Machine Learning supported drone project
 [![Build Status](https://img.shields.io/github/actions/workflow/status/tunahanfaruk/sophia/main.yml)](https://github.com/tunahanfaruk/sophia/actions)
 [![License](https://img.shields.io/github/license/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/releases)
-[![Dependencies](https://img.shields.io/librariesio/github/tunahanfaruk/sophia)](https://libraries.io/github/tunahanfaruk/sophia)
 [![GitHub Stars](https://img.shields.io/github/stars/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/network/members)
 [![Open Issues](https://img.shields.io/github/issues/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/issues)
