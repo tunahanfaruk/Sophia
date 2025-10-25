@@ -13,7 +13,6 @@ Machine Learning supported drone project
 
 <!-- Dependencies / Vulnerabilities -->
 [![Dependencies](https://img.shields.io/librariesio/github/USERNAME/REPO)](https://libraries.io/github/USERNAME/REPO)
-[![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/USERNAME/REPO)](https://snyk.io/test/github/USERNAME/REPO)
 
 <!-- Stars / Forks -->
 [![GitHub Stars](https://img.shields.io/github/stars/USERNAME/REPO?style=social)](https://github.com/USERNAME/REPO/stargazers)
