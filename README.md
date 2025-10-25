@@ -1,6 +1,9 @@
 # sophia  
 Machine Learning supported drone project  
 
+[Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
+
+
 ### OWERVİEW
 Goal of this project is powering a drone whit MACHINE LEARNING MODELS. Because for a drone that is powered by ML there noting that it can do  
 now the project is at the part of programmeing the flight controller
