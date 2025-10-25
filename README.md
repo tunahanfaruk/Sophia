@@ -26,7 +26,7 @@ Machine Learning supported drone project
 [![Top Languages](https://img.shields.io/github/languages/top/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia)
 
 <!-- GitHub Sponsors -->
-[![Sponsors](https://img.shields.io/github/sponsors/USERNAME)](https://github.com/sponsors/tunahanfaruk)
+[![Sponsors](https://img.shields.io/github/sponsors/tunahanfaruk)](https://github.com/sponsors/tunahanfaruk)
 
 <!-- Special GitHub badges -->
 [![Arctic Code Vault Contributor](https://img.shields.io/badge/Arctic%20Code%20Vault-Contributor-blue)](https://archiveprogram.github.com/)
