@@ -18,17 +18,10 @@ Machine Learning supported drone project
 [![GitHub Stars](https://img.shields.io/github/stars/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/network/members)
 
-<!-- Issues / Pull Requests -->
 [![Open Issues](https://img.shields.io/github/issues/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/pulls)
-
-<!-- Top Languages -->
 [![Top Languages](https://img.shields.io/github/languages/top/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia)
-
-<!-- GitHub Sponsors -->
 [![Sponsors](https://img.shields.io/github/sponsors/tunahanfaruk)](https://github.com/sponsors/tunahanfaruk)
-
-<!-- Special GitHub badges -->
 [![Arctic Code Vault Contributor](https://img.shields.io/badge/Arctic%20Code%20Vault-Contributor-blue)](https://archiveprogram.github.com/)
 
 
