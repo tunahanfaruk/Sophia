@@ -15,6 +15,19 @@ Machine Learning supported drone project
 [![Sponsors](https://img.shields.io/github/sponsors/tunahanfaruk)](https://github.com/sponsors/tunahanfaruk)
 [![Arctic Code Vault Contributor](https://img.shields.io/badge/Arctic%20Code%20Vault-Contributor-blue)](https://archiveprogram.github.com/)
 
+[![Coverage](https://img.shields.io/codecov/c/github/tunahanfaruk/sophia)](https://codecov.io/gh/tunahanfaruk/sophia)
+[![Code Quality](https://img.shields.io/codacy/grade/1069937053)](https://www.codacy.com/)
+
+[![PyPI](https://img.shields.io/pypi/v/sophia)](https://pypi.org/project/sophia/)
+[![Downloads](https://img.shields.io/pypi/dm/sophia)](https://pypi.org/project/sophia/)
+
+
+[![Contributors](https://img.shields.io/github/contributors/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/graphs/contributors)
+
+
+
+
+
 
 
 [Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
