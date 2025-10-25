@@ -2,22 +2,13 @@
 Machine Learning supported drone project  
 
 
-<!-- Build / CI Status -->
+
 [![Build Status](https://img.shields.io/github/actions/workflow/status/tunahanfaruk/sophia/main.yml)](https://github.com/tunahanfaruk/sophia/actions)
-
-<!-- License -->
 [![License](https://img.shields.io/github/license/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/blob/main/LICENSE)
-
-<!-- Latest Release / Version -->
 [![Release](https://img.shields.io/github/v/release/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/releases)
-
-<!-- Dependencies / Vulnerabilities -->
 [![Dependencies](https://img.shields.io/librariesio/github/tunahanfaruk/sophia)](https://libraries.io/github/tunahanfaruk/sophia)
-
-<!-- Stars / Forks -->
 [![GitHub Stars](https://img.shields.io/github/stars/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/network/members)
-
 [![Open Issues](https://img.shields.io/github/issues/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/pulls)
 [![Top Languages](https://img.shields.io/github/languages/top/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia)
