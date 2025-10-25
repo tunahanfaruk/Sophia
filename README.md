@@ -3,7 +3,7 @@ Machine Learning supported drone project
 
 
 <!-- Build / CI Status -->
-[![Build Status](https://img.shields.io/github/actions/workflow/status/USERNAME/REPO/main.yml)](https://github.com/USERNAME/REPO/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/tunahanfaruk/sophia/main.yml)](https://github.com/USERNAME/REPO/actions)
 
 <!-- License -->
 [![License](https://img.shields.io/github/license/USERNAME/REPO)](https://github.com/USERNAME/REPO/blob/main/LICENSE)
