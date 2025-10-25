@@ -33,7 +33,7 @@ Sophia is an experimental drone powered by Machine Learning models. The goal is 
 * 🚀 4 kg thrust
 * 🕐 Flight controller loop time: ~5 ms
 
-###Hardware Components
+### Hardware Components
 | components |
 |:----|
 |BMP390|
