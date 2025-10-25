@@ -15,7 +15,6 @@ Machine Learning supported drone project
 [![Arctic Code Vault Contributor](https://img.shields.io/badge/Arctic%20Code%20Vault-Contributor-blue)](https://archiveprogram.github.com/)
 [![Downloads](https://img.shields.io/pypi/dm/sophia)](https://pypi.org/project/sophia/)
 [![Contributors](https://img.shields.io/github/contributors/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/graphs/contributors)
-
 [![Known Vulnerabilities](https://snyk.io/test/github/tunahanfaruk/sophia/badge.svg)](https://snyk.io/test/github/tunahanfaruk/sophia)
 
 
