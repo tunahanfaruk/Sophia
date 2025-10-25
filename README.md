@@ -5,7 +5,7 @@ Machine Learning supported drone project
 
 
 ### OWERVİEW
-Goal of this project is powering a drone whit MACHINE LEARNING MODELS. Because for a drone that is powered by ML there noting that it can do  
+Goal of this project is powering a drone whit MACHINE LEARNING MODELS. Because for a drone that is powered by ML there noting that it cant do  
 now the project is at the part of programmeing the flight controller
 
 ### LIST OF PARTS:  
