@@ -20,7 +20,7 @@ Machine Learning supported drone project
 
 <!-- Issues / Pull Requests -->
 [![Open Issues](https://img.shields.io/github/issues/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/USERNAME/REPO)](https://github.com/tunahanfaruk/sophia/pulls)
+[![Pull Requests](https://img.shields.io/github/issues-pr/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/pulls)
 
 <!-- Top Languages -->
 [![Top Languages](https://img.shields.io/github/languages/top/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia)
