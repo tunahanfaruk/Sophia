@@ -6,27 +6,27 @@ Machine Learning supported drone project
 [![Build Status](https://img.shields.io/github/actions/workflow/status/tunahanfaruk/sophia/main.yml)](https://github.com/tunahanfaruk/sophia/actions)
 
 <!-- License -->
-[![License](https://img.shields.io/github/license/USERNAME/REPO)](https://github.com/USERNAME/REPO/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/blob/main/LICENSE)
 
 <!-- Latest Release / Version -->
-[![Release](https://img.shields.io/github/v/release/USERNAME/REPO)](https://github.com/USERNAME/REPO/releases)
+[![Release](https://img.shields.io/github/v/release/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/releases)
 
 <!-- Dependencies / Vulnerabilities -->
-[![Dependencies](https://img.shields.io/librariesio/github/USERNAME/REPO)](https://libraries.io/github/USERNAME/REPO)
+[![Dependencies](https://img.shields.io/librariesio/github/tunahanfaruk/sophia)](https://libraries.io/github/tunahanfaruk/sophia)
 
 <!-- Stars / Forks -->
-[![GitHub Stars](https://img.shields.io/github/stars/USERNAME/REPO?style=social)](https://github.com/USERNAME/REPO/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/USERNAME/REPO?style=social)](https://github.com/USERNAME/REPO/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/tunahanfaruk/sophia?style=social)](https://github.com/tunahanfaruk/sophia/network/members)
 
 <!-- Issues / Pull Requests -->
-[![Open Issues](https://img.shields.io/github/issues/USERNAME/REPO)](https://github.com/USERNAME/REPO/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/USERNAME/REPO)](https://github.com/USERNAME/REPO/pulls)
+[![Open Issues](https://img.shields.io/github/issues/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/USERNAME/REPO)](https://github.com/tunahanfaruk/sophia/pulls)
 
 <!-- Top Languages -->
-[![Top Languages](https://img.shields.io/github/languages/top/USERNAME/REPO)](https://github.com/USERNAME/REPO)
+[![Top Languages](https://img.shields.io/github/languages/top/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia)
 
 <!-- GitHub Sponsors -->
-[![Sponsors](https://img.shields.io/github/sponsors/USERNAME)](https://github.com/sponsors/USERNAME)
+[![Sponsors](https://img.shields.io/github/sponsors/USERNAME)](https://github.com/sponsors/tunahanfaruk)
 
 <!-- Special GitHub badges -->
 [![Arctic Code Vault Contributor](https://img.shields.io/badge/Arctic%20Code%20Vault-Contributor-blue)](https://archiveprogram.github.com/)
