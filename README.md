@@ -16,19 +16,15 @@ Machine Learning supported drone project
 [![Known Vulnerabilities](https://snyk.io/test/github/tunahanfaruk/sophia/badge.svg)](https://snyk.io/test/github/tunahanfaruk/sophia)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c4c00161f93741ab9a7ec89f108db3ed)](https://app.codacy.com/gh/tunahanfaruk/sophia/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![Downloads](https://img.shields.io/github/downloads/tunahanfaruk/sophia/total?style=flat-square)
-
-
-
-
-
-
-
-
-### Overview
-Sophia is an experimental drone powered by Machine Learning models. The goal is to create an autonomous drone capable of complex tasks such as object detection, fire detection, and situational awareness in real-time.
-[Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
   
+ 
+### Overview  
+Sophia is an experimental drone powered by Machine Learning models. The goal is to create an autonomous drone capable of complex tasks such as object detection, fire detection, and situational awareness in real-time.  
+
   
+### Website of Sophia  
+if you want to get more detail about sophia you can visit [Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)  
+
   
   
 ### Features
