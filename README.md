@@ -65,4 +65,7 @@ Sophia is an experimental drone powered by Machine Learning models. The goal is 
 * Single loop execution: ~5 ms
 
 ### Contributing
-PRs and issues are welcome! Let’s make Sophia smarter together.
+PRs and issues are welcome! Let’s make Sophia smarter together.  
+
+    
+Star this repo ⭐ if you like it!  
