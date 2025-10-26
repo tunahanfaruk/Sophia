@@ -22,12 +22,15 @@ Machine Learning supported drone project
 
 
 
-[Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
 
 
 ### Overview
 Sophia is an experimental drone powered by Machine Learning models. The goal is to create an autonomous drone capable of complex tasks such as object detection, fire detection, and situational awareness in real-time.
-
+[Website of Sophia](https://tunahanfaruk.github.io/sophia/Web_Site/index.html)
+  
+  
+  
+  
 ### Features
 * 🔥 Forest fire detection
 * 🔫 Gun and knife detection
