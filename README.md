@@ -15,7 +15,7 @@ Machine Learning supported drone project
 [![Contributors](https://img.shields.io/github/contributors/tunahanfaruk/sophia)](https://github.com/tunahanfaruk/sophia/graphs/contributors)
 [![Known Vulnerabilities](https://snyk.io/test/github/tunahanfaruk/sophia/badge.svg)](https://snyk.io/test/github/tunahanfaruk/sophia)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c4c00161f93741ab9a7ec89f108db3ed)](https://app.codacy.com/gh/tunahanfaruk/sophia/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-![Downloads](https://img.shields.io/github/downloads/<kullanici>/<repo>/total?style=flat-square)
+![Downloads](https://img.shields.io/github/downloads/tunahanfaruk/sophia/total?style=flat-square)
 
 
 
