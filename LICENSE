@@ -1,29 +1,43 @@
-Sophia Software License v1.0
+Sophia Software & Assets License v2.0
 
-By contributing to or using this repository, you agree to the following terms:
+Copyright (c) Repo Owner : Tunahan Faruk Savranoğlu
 
-1. Right to Use
+1. Definitions
+   "Assets" refers to all materials in this repository, including but not limited to:
+   - Source code
+   - ML models
+   - 3D models, CAD files, and other design assets
+   - Any other files uploaded or contributed for Sophia
 
-This code may only be used for personal use, educational purposes, and contributions to this repository.
+2. Permitted Use
+   - Assets may be used solely for personal, educational, and research purposes.
+   - Contributions to this repository are allowed under this license.
+   - Commercial use, selling, licensing for profit, or use in any revenue-generating activity is strictly prohibited.
 
-Commercial use, selling for profit, or any activity intended to generate income is prohibited.
+3. Ownership & Contributions
+   - All rights to the Assets remain exclusively with the repository owner.
+   - Contributors retain moral rights to their work but transfer all usage rights of contributions to the repository owner.
+   - No part of the Assets may be copied, redistributed, or used outside this repository without prior written permission.
 
-2. Copying and Distribution
+4. Modification & Redistribution
+   - You may modify Assets for personal or educational purposes only.
+   - You may not distribute modified Assets outside this repository or claim ownership over them.
+   - Forking this repository is allowed on GitHub under the same license terms.
 
-No part of this code may be copied, distributed, or shared without permission.
+5. Disclaimer of Liability
+   - Assets are provided "as-is" without any warranties.
+   - The repository owner and contributors are not responsible for:
+     - Loss of data, projects, or equipment
+     - Errors, bugs, or unexpected behavior
+     - Any direct or indirect damages resulting from the use of Assets
+   - Users assume full responsibility for using the Assets.
 
-Contributors acknowledge that all rights to the code they write belong entirely to the repository owner.
+6. License Updates
+   - The repository owner may update or modify this license at any time.
+   - By using or contributing to the repository, you agree to accept any future license changes.
 
-3. Disclaimer of Liability
+7. Purpose
+   - Ensure all contributions and developments remain centralized for faster, controlled development.
+   - Preserve the educational focus of the repository.
+   - Grant full control and freedom to the repository owner over all Assets, while preventing unauthorized commercial use.
 
-The code is provided "as-is". The repository owner and contributors are not responsible for any errors, data loss, or damages resulting from the use of this code.
-
-Users are solely responsible for any consequences arising from using the code.
-
-4. License Changes
-
-The repository owner reserves the right to update or modify this license at any time.
-
-By contributing, you agree to accept any future changes to the license.
-
-goal of this license is force to use this repository for only education not for commerical use and keep code in one repository for developing fast and give freedom to repository owner.
