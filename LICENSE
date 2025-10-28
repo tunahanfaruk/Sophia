@@ -1,43 +1,42 @@
 Sophia Software & Assets License v2.0
 
-Copyright (c) Repo Owner : Tunahan Faruk Savranoğlu
+Copyright (c) 2025 Tunahan Faruk Savranoğlu
 
 1. Definitions
-   "Assets" refers to all materials in this repository, including but not limited to:
-   - Source code
-   - ML models
-   - 3D models, CAD files, and other design assets
-   - Any other files uploaded or contributed for Sophia
+"Assets" refer to all materials in this repository, including but not limited to:
+- Source code
+- ML models
+- 3D models, CAD files, and other design assets
+- Any other files uploaded or contributed for Sophia
 
 2. Permitted Use
-   - Assets may be used solely for personal, educational, and research purposes.
-   - Contributions to this repository are allowed under this license.
-   - Commercial use, selling, licensing for profit, or use in any revenue-generating activity is strictly prohibited.
+- Assets may only be used for personal, educational, or research purposes.
+- Contributions to this repository are allowed under this license.
+- Commercial use, sale, licensing for profit, or any revenue-generating activity is strictly prohibited.
 
-3. Ownership & Contributions
-   - All rights to the Assets remain exclusively with the repository owner.
-   - Contributors retain moral rights to their work but transfer all usage rights of contributions to the repository owner.
-   - No part of the Assets may be copied, redistributed, or used outside this repository without prior written permission.
+3. Ownership and Contributions
+- All rights to the assets remain with the repository owner.
+- Contributors assign all rights of use, reproduction, modification, distribution, sublicensing, and any other rights related to their contributions to the repository owner.
+- No part of the assets may be copied, distributed, or used outside the repository without prior written permission.
 
-4. Modification & Redistribution
-   - You may modify Assets for personal or educational purposes only.
-   - You may not distribute modified Assets outside this repository or claim ownership over them.
-   - Forking this repository is allowed on GitHub under the same license terms.
+4. Modification and Redistribution
+- Assets may only be modified for personal or educational purposes.
+- Modified assets may not be distributed outside the repository or claimed as one’s own.
+- Forking on GitHub is permitted, but the same license terms apply.
 
-5. Disclaimer of Liability
-   - Assets are provided "as-is" without any warranties.
-   - The repository owner and contributors are not responsible for:
-     - Loss of data, projects, or equipment
-     - Errors, bugs, or unexpected behavior
-     - Any direct or indirect damages resulting from the use of Assets
-   - Users assume full responsibility for using the Assets.
+5. Disclaimer
+- Assets are provided "as is" without any warranties.
+- The repository owner and contributors are not responsible for:
+    - Loss of data, projects, or equipment
+    - Bugs, errors, or unexpected behavior
+    - Direct or indirect damages arising from asset usage
+- Users assume full responsibility for their use of the assets.
 
 6. License Updates
-   - The repository owner may update or modify this license at any time.
-   - By using or contributing to the repository, you agree to accept any future license changes.
+- The repository owner may update or modify this license at any time.
+- All users and contributors are deemed to accept future license changes by using or contributing to the repository.
 
 7. Purpose
-   - Ensure all contributions and developments remain centralized for faster, controlled development.
-   - Preserve the educational focus of the repository.
-   - Grant full control and freedom to the repository owner over all Assets, while preventing unauthorized commercial use.
-
+- Ensure centralized and controlled management of all contributions and developments.
+- Keep the repository and works focused on educational purposes.
+- Grant the repository owner full control and freedom over all assets, preventing unauthorized commercial use.
